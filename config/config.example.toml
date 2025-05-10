@@ -1,0 +1,33 @@
+bind_addr = ":8080"
+log_level = "debug"
+
+proxy_url = "proxy_url
+
+[STORE]
+database_url = ""
+
+
+[Clouvider]
+ApiKey = "KEY"
+CriticalBalance = 1
+
+[SMSActivate]
+ApiKey = "KEY"
+CriticalBalance = 1
+
+[Asocks]
+ApiKey = "KEY"
+CriticalBalance = 1
+
+[DataImpulse]
+ApiKey = "KEY"
+CriticalBalance = 1
+
+[IpHoster]
+ApiKey = ""
+CriticalBalance = 1
+
+[Aeza]
+ApiKey = ""
+CriticalBalance = 1
+
