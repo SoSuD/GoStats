@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  statsbot:
+    build:
+      context: .                                 # корень проекта, где лежат go.mod/go.sum
+      dockerfile: ./cmd/statsbot/Dockerfile     # путь к вашему Dockerfile
+    image: go-statsbot:latest                   # имя итогового образа
+    container_name: statsbot                    # опционально — имя контейнера
+    ports:
+      - "8081:8080"                              # проброс порта (замените на нужный вам)
+    volumes:
+      - ./config:/app/config:ro # монтируем ваш конфиг внутрь контейнера
+    environment:
+      - CONFIG_PATH=/app/config.toml            # если приложение читает путь из переменной
+    restart: unless-stopped                     # автоперезапуск контейнера
+
+# при необходимости добавьте сюда другие сервисы (базы данных, кэш, очереди и т.п.)
